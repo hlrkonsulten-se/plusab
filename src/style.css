@@ -1,0 +1,928 @@
+/* ========================================
+   GLOBAL
+======================================== */
+
+:root {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color: #202124;
+  background: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --red: #e3062c;
+  --red-dark: #c80025;
+
+  --black: #202124;
+
+  --text-grey: #555a60;
+
+  --border: #e7e7e7;
+
+  --white: #ffffff;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+
+  color: var(--black);
+  background: var(--white);
+}
+
+
+img {
+  display: block;
+
+  max-width: 100%;
+}
+
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+.container {
+  width: min(1380px, calc(100% - 100px));
+
+  margin: 0 auto;
+}
+
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.site-header {
+  height: 84px;
+
+  background: #DA052B;
+
+  position: relative;
+
+  z-index: 10;
+}
+
+
+.header-inner {
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+
+.plusab-brand {
+  display: block;
+
+  width: 225px;
+}
+
+
+.plusab-brand img {
+  width: 100%;
+
+  height: auto;
+}
+
+
+.main-nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 55px;
+
+}
+
+
+.nav-link {
+  font-size: 16px;
+
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+
+.nav-link:hover {
+  color: white;
+}
+
+
+.header-cta {
+  min-height: 54px;
+
+  padding: 0 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  color: #293439;
+
+  background: white;
+
+  border-radius: 5px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+
+.header-cta span {
+  font-size: 23px;
+
+  font-weight: 600;
+}
+
+
+.header-cta:hover {
+  color: white;
+  background: #293439;
+
+  transform: translateY(-1px);
+}
+
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  position: relative;
+
+  min-height: 590px;
+
+  overflow: hidden;
+
+  background: #f5f5f3;
+}
+
+
+.hero-image {
+  position: absolute;
+
+  inset: 0;
+}
+
+
+.hero-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+}
+
+
+/* White gradient allows text to sit over image */
+
+.hero-gradient {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+
+      rgba(255, 255, 255, 1) 0%,
+
+      rgba(255, 255, 255, 0.98) 24%,
+
+      rgba(255, 255, 255, 0.88) 36%,
+
+      rgba(255, 255, 255, 0.55) 49%,
+
+      rgba(255, 255, 255, 0.12) 65%,
+
+      rgba(255, 255, 255, 0) 78%
+    );
+}
+
+
+.hero-container {
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 590px;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+.hero-content {
+  width: min(600px, 50%);
+
+  padding: 65px 0;
+}
+
+
+
+/* Plusab is now part of */
+
+.hero-title {
+  margin: 0 0 17px;
+
+  color: var(--red);
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+
+.accent-line {
+  width: 65px;
+
+  height: 4px;
+
+  margin-bottom: 5px;
+
+  background: var(--red);
+}
+
+
+
+/* HLR LOGO */
+
+.hlr-logo {
+  display: block;
+
+  width: min(470px, 90%);
+
+  max-height: 155px;
+
+  object-fit: contain;
+
+  object-position: left center;
+
+  margin: 0 0 5px;
+}
+
+
+
+/* HERO COPY */
+
+.hero-copy {
+  max-width: 560px;
+
+  margin: 0 0 34px;
+
+  color: #45494e;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+
+
+/* BUTTONS */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+.button {
+  min-height: 58px;
+
+  padding: 0 20px;
+
+  border-radius: 5px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+
+.button-primary {
+  color: #ffffff;
+
+  background: var(--red);
+}
+
+
+.button-primary span {
+  font-size: 24px;
+
+  font-weight: 400;
+}
+
+
+.button-primary:hover {
+  background: var(--red-dark);
+
+  transform: translateY(-2px);
+}
+
+
+.read-more {
+  padding: 10px 0 8px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-bottom: 2px solid var(--red);
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.read-more span {
+  color: var(--red);
+
+  font-size: 18px;
+}
+
+.read-more:hover {
+  border-color: transparent;
+  color: var(--red);
+  transform: translateY(-2px);
+}
+
+
+
+/* ========================================
+   BENEFITS
+======================================== */
+
+.benefits {
+  background: #ffffff;
+}
+
+
+.benefits-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+.benefit {
+  min-height: 260px;
+
+  position: relative;
+
+  padding:
+    34px
+    50px
+    38px
+    0;
+}
+
+
+.benefit:not(:first-child) {
+  padding-left: 50px;
+}
+
+
+.benefit:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 42px;
+
+  right: 0;
+
+  bottom: 42px;
+
+  width: 1px;
+
+  background: var(--border);
+}
+
+
+
+/* ICON */
+
+.icon {
+  width: 42px;
+
+  height: 42px;
+
+  margin-bottom: 18px;
+
+  color: var(--red);
+}
+
+
+.icon svg {
+  width: 100%;
+
+  height: 100%;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.8;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+
+/* BENEFIT TEXT */
+
+.benefit h2 {
+  margin: 0 0 14px;
+
+  font-size: 18px;
+
+  line-height: 1.22;
+
+  font-weight: 800;
+}
+
+
+.benefit p {
+  max-width: 245px;
+
+  margin: 0;
+
+  color: var(--text-grey);
+
+  font-size: 15px;
+
+  line-height: 1.55;
+}
+
+
+
+/* ========================================
+   BOTTOM CTA
+======================================== */
+
+.bottom-cta {
+  min-height: 76px;
+
+  color: #ffffff;
+
+  background: var(--red);
+}
+
+
+.bottom-cta-inner {
+  min-height: 76px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 45px;
+}
+
+
+.bottom-message {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+}
+
+
+.bottom-message svg {
+  width: 30px;
+
+  height: 30px;
+
+  fill: none;
+
+  stroke: #ffffff;
+
+  stroke-width: 1.5;
+}
+
+
+.bottom-message p,
+.bottom-link {
+  margin: 0;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+}
+
+
+.bottom-divider {
+  width: 1px;
+
+  height: 32px;
+
+  background: rgba(255, 255, 255, 0.55);
+}
+
+
+.bottom-link a {
+  margin-left: 8px;
+
+  border-bottom: 1px solid #ffffff;
+
+  font-weight: 600;
+}
+
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+  .container {
+    width: calc(100% - 64px);
+  }
+
+
+  .hero-gradient {
+    background:
+      linear-gradient(
+        90deg,
+
+        rgba(255, 255, 255, 1) 0%,
+
+        rgba(255, 255, 255, 0.97) 35%,
+
+        rgba(255, 255, 255, 0.65) 58%,
+
+        rgba(255, 255, 255, 0.1) 100%
+      );
+  }
+
+
+  .hero-content {
+    width: 60%;
+  }
+
+
+  .benefit {
+    padding-right: 28px;
+  }
+
+
+  .benefit:not(:first-child) {
+    padding-left: 28px;
+  }
+
+}
+
+
+
+/* ========================================
+   SMALL TABLET
+======================================== */
+
+@media (max-width: 850px) {
+
+  .site-header {
+    height: 96px;
+  }
+
+
+  .plusab-brand {
+    width: 175px;
+  }
+
+
+  .main-nav {
+    gap: 20px;
+  }
+
+
+  .nav-link {
+    display: none;
+  }
+
+
+  .header-cta {
+    min-height: 46px;
+
+    padding: 0 19px;
+  }
+
+
+
+  /* HERO BECOMES STACKED */
+
+  .hero {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+  }
+
+
+  .hero-image {
+    position: relative;
+
+    height: 350px;
+
+    order: 1;
+  }
+
+
+  .hero-image img {
+    object-position: 65% center;
+  }
+
+
+  .hero-gradient {
+    display: none;
+  }
+
+
+  .hero-container {
+    min-height: auto;
+
+    order: 2;
+  }
+
+
+  .hero-content {
+    width: 100%;
+
+    padding: 55px 0;
+  }
+
+
+  .hlr-logo {
+    width: min(430px, 90%);
+  }
+
+
+
+  /* BENEFITS */
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .benefit,
+  .benefit:not(:first-child) {
+    padding: 40px;
+  }
+
+
+  .benefit:nth-child(2)::after {
+    display: none;
+  }
+
+
+  .benefit:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+
+
+  /* BOTTOM */
+
+  .bottom-cta-inner {
+    padding: 20px 0;
+
+    flex-wrap: wrap;
+  }
+
+}
+
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .container {
+    width: calc(100% - 36px);
+  }
+
+
+
+  /* HEADER */
+
+  .site-header {
+    height: 82px;
+  }
+
+
+  .plusab-brand {
+    width: 140px;
+  }
+
+
+  .header-cta {
+    min-height: 42px;
+
+    padding: 0 14px;
+
+    font-size: 12px;
+
+    gap: 10px;
+  }
+
+
+  .header-cta span {
+    display: none;
+  }
+
+
+
+  /* HERO */
+
+  .hero-image {
+    height: 260px;
+  }
+
+
+  .hero-content {
+    padding: 42px 0 50px;
+  }
+
+
+  .hero-label {
+    font-size: 14px;
+  }
+
+
+  .accent-line {
+    width: 52px;
+
+    height: 3px;
+
+    margin-bottom: 24px;
+  }
+
+
+  .hlr-logo {
+    width: min(340px, 92%);
+
+    max-height: 100px;
+
+    margin-bottom: 24px;
+  }
+
+
+  .hero-copy {
+    font-size: 16px;
+
+    line-height: 1.65;
+  }
+
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+
+  .button-primary {
+    width: 100%;
+  }
+
+
+
+  /* BENEFITS */
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .benefit,
+  .benefit:not(:first-child) {
+    min-height: auto;
+
+    padding: 36px 4px;
+  }
+
+
+  .benefit:not(:last-child)::after {
+    top: auto;
+
+    right: 0;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 1px;
+  }
+
+
+  .benefit:nth-child(2)::after {
+    display: block;
+  }
+
+
+  .benefit:nth-child(-n + 2) {
+    border-bottom: none;
+  }
+
+
+
+  /* BOTTOM */
+
+  .bottom-cta-inner {
+    padding: 26px 0;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+
+  .bottom-divider {
+    width: 100%;
+
+    height: 1px;
+  }
+
+
+  .bottom-message p,
+  .bottom-link {
+    font-size: 15px;
+  }
+
+}
