@@ -261,7 +261,7 @@ app.innerHTML = `
           Handla online
 
           <a
-            href="https://www.hlr-konsulten.se/"
+            href="https://www.hlr-konsulten.se/butik"
             target="_blank"
             rel="noopener noreferrer"
           >
